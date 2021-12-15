@@ -1,0 +1,95 @@
+@-webkit-keyframes mdp-float-aura {
+    from {
+        box-shadow: 0 0 0 -1px var(--hmp-color-75), 0 0 0 -1px var(--hmp-color-50), 0 0 0 -1px var(--hmp-color-25)
+    }
+    to {
+        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0), 0 0 0 30px rgba(255, 255, 255, 0), 0 0 0 45px rgba(255, 255, 255, 0)
+    }
+}
+@keyframes mdp-float-aura {
+    from {
+        box-shadow: 0 0 0 -1px var(--hmp-color-75), 0 0 0 -1px var(--hmp-color-50), 0 0 0 -1px var(--hmp-color-25)
+    }
+    to {
+        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0), 0 0 0 30px rgba(255, 255, 255, 0), 0 0 0 45px rgba(255, 255, 255, 0)
+    }
+}
+@-webkit-keyframes mdp-float-init {
+    0% {
+        opacity: 0;
+        transform: scale(.25)
+    }
+    50% {
+        opacity: 0
+    }
+    80% {
+        transform: scale(1);
+        opacity: 1
+    }
+    90% {
+        transform: scale(1.2)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+@keyframes mdp-float-init {
+    0% {
+        opacity: 0;
+        transform: scale(.25)
+    }
+    50% {
+        opacity: 0
+    }
+    80% {
+        transform: scale(1);
+        opacity: 1
+    }
+    90% {
+        transform: scale(1.2)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+.mdp-float {
+    --hmp-color: rgb( 51, 153, 255);
+    --hmp-color-75: rgba( 51, 153, 255, .75);
+    --hmp-color-50: rgba( 51, 153, 255, .5);
+    --hmp-color-25: rgba( 51, 153, 255, .25);
+    --hmp-color-5: rgba( 51, 153, 255, .05);
+    position: absolute;
+    z-index: 999999;
+    border-radius: 50%;
+    top: 3em;
+    right: 3em;
+    width: 3em;
+    height: 3em;
+    transition: .75s;
+    transition-timing-function: ease-out
+}
+.mdp-float:hover {
+    -webkit-animation: mdp-float-aura infinite;
+    animation: mdp-float-aura infinite;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s
+}
+.mdp-float.mdp-float-inertia {
+    transition: .25s
+}
+.mdp-float.mdp-float-slow {
+    transition-delay: .5s;
+    transition: 5s
+}
+.mdp-float.mdp-float-init {
+    -webkit-animation: mdp-float-init 1s;
+    animation: mdp-float-init 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+@media (max-width: 720px) {
+    .mdp-float {
+        top: 1.5em;
+        right: 1.5em
+    }
+}
